@@ -35,7 +35,7 @@ static double parse_dimacs_to_cnf2wl(std::string& filename, cnf2wl& formula, boo
     char   buffer[24];
     std::vector<int> construct_clause;
 
-    while ((m = satsuma_getc(file)) != EOF) {
+    while ((m = satsuma_getc(file)) != EOF && m != 'X') {
         [[likely]]
         ++line_num;
         //const char m = line[0];
